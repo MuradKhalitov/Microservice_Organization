@@ -1,0 +1,21 @@
+server:
+  port: 0
+spring:
+  application:
+    name: order-service
+  profiles:
+    active: local
+  cloud:
+    config:
+      uri: http://localhost:8888/eureka/
+      discovery:
+        enabled: true
+      name: discovery
+      profile: default
+      label: master
+      fail-fast: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
